@@ -1,5 +1,21 @@
 include pug/mixins.pug
 
+mixin Product(img, title)
+    a(href="#")
+        - let imgPath = "assets/images/icons/" + img + ".png"
+        .icon
+            img(src=imgPath, alt="")
+        =title
+
+mixin ProductCard(img, title)
+    .product
+        - let imgPath = "assets/images/products/" + img + ".jpg"
+        img(src=imgPath, alt="")
+        .text__wrapper
+            span.item__title=title
+            span.price от 490 руб.\м3
+            button.btn.orange.simple Подробнее
+
 doctype html
 html(lang="ru")
     head
@@ -28,5 +44,91 @@ html(lang="ru")
             .menu__wrapper
                 .container
                     +Menu()
+        section.main
+            .container
+                .sidebar
+                    .products__list
+                        +Product('product1', 'Речной песок')
+                        +Product('product2', 'Мытый песок')
+                        +Product('product3', 'Песчано гравийная смесь (ПГС)')
+                        +Product('product4', 'Щебень')
+                        +Product('product5', 'Чернозем')
+                        +Product('product6', 'Грунт плодородный')
+                        +Product('product7', 'Гравий')
+                        +Product('product8', 'Глина')
+                    .services
+                        a(href="#") Вывоз снега в Москве
+                        a(href="#") Вывоз мусора в Москве
+                        a(href="#") Рытье котлованов в Москве 
+                    .video
+                        img(src="assets/images/video.jpg", alt="")
+                        .text
+                            |Обращение директора компании «Совмат»
+                        button.btn_play
+                            img(src="assets/images/icons/play.png", alt="")
+                .container
+                    .slider__wrapper
+                        .slider.owl-carousel
+                            .slider__item
+                                img(src="assets/images/slider/1.jpg", alt="")
+                                .wrapper
+                                    .item__title 
+                                        span Доставка песка, щебня, грунта чернозёма, гравия, глины и других сыпучих материалов
+                                    button.btn.orange.big расчитать стоимость
+                            .slider__item
+                                img(src="assets/images/slider/1.jpg", alt="")
+                                .wrapper
+                                    .item__title 
+                                        span Доставка песка, щебня, грунта чернозёма, гравия, глины и других сыпучих материалов
+                                    button.btn.orange.big расчитать стоимость
+                            .slider__item
+                                img(src="assets/images/slider/1.jpg", alt="")
+                                .wrapper
+                                    .item__title 
+                                        span Доставка песка, щебня, грунта чернозёма, гравия, глины и других сыпучих материалов
+                                    button.btn.orange.big расчитать стоимость
+                        .owl__nav
+                            .nav
+                            .dots
+                    .our__pluses
+                        .plus
+                            .text
+                                |Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, culpa.
+                            .hover
+                                img(src="assets/images/icons/plus1.png", alt="")
+                                span Привезем в день заказа
+                        .plus
+                            .text
+                                |Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, culpa.
+                            .hover
+                                img(src="assets/images/icons/plus2.png", alt="")
+                                span Доставка от 3 м3
+                        .plus
+                            .text
+                                |Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, culpa.
+                            .hover
+                                img(src="assets/images/icons/plus3.png", alt="")
+                                span Приятные цены
+                        .plus
+                            .text
+                                |Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, culpa.
+                            .hover
+                                img(src="assets/images/icons/plus4.png", alt="")
+                                span Материал <br> с производства
+                    .our__products
+                        h1.title Выберите сопутствующие материалы для строительства:
+                        .wrapper
+                            +ProductCard('1', 'Речной песок')
+                            +ProductCard('2', 'Мытый песок')
+                            +ProductCard('3', 'Карьерный песок')
+                            +ProductCard('4', 'Чернозем')
+                            +ProductCard('5', 'Грунт плодородный')
+                            +ProductCard('6', 'Песчано гравийная смесь (ПГС)')
+                            +ProductCard('7', 'Гравий')
+                            +ProductCard('8', 'Глина')
+                            +ProductCard('9', 'Щебень')
+
+                    
+
 
         include pug/scripts.pug

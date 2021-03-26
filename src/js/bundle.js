@@ -1,4 +1,5 @@
-global.$ = require('jquery');
+global.$ = global.jQuery = require('jquery');
+require('owl.carousel');
 
 $(document).ready(Core);
 
