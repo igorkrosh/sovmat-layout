@@ -9,11 +9,21 @@ html(lang="ru")
         title Document
         include pug/head.pug
     body
-        .container
-            h1 Hi from PUG! 
-            +InputRadio('name', 'test')
-            
-            +Modal('test', 'ModalTemplate')
-            button(modal="test") Modal Test
+        header.navbar 
+            .container
+                .logo
+                    img(src="assets/images/logo.png", alt="")
+                .form__city(value="Истра")
+                    span.text Ваш город:
+                    span.city Истра
+                    .select
+                        span Истра
+                        span Нфыварколыв
+                        span Истра3
+                .contact__phone
+                    a(href="#") 
+                        +ContactPhone()
+                button.btn.orange расчитать стоимость
+                a(href="").btn.border прайс-лист для юр. лиц
 
         include pug/scripts.pug

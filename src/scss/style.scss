@@ -1,5 +1,6 @@
 body
 {
+    font-family: "Akrobat";
     margin: 0;
     color: #000;
     background: #fff;
@@ -30,6 +31,134 @@ button, input, select
 button, a
 {
     cursor: pointer;
+}
+
+.navbar
+{
+    background-color: #f2f2f1;
+
+    .container
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .form__city
+    {
+        font-size: 18px;
+        font-weight: 500;
+        position: relative;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 13px;
+
+        .city
+        {
+            color: #DA5614;
+            margin-left: 5px;
+        }
+
+        .select
+        {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            padding: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s;
+
+            span
+            {
+                padding: 5px 10px 5px 10px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            
+            span:hover
+            {
+                background-color: #f2f2f1;
+            }
+        }
+    }
+
+    .form__city:hover .select
+    {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .form__city:after
+    {
+        content: '';
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        background: url(../images/icons/select_arrow_orange.png);
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .contact__phone
+    {
+        font-size: 19px;
+        font-weight: 600;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    .contact__phone:after
+    {
+        content: '';
+        position: absolute;
+        width: 13px;
+        height: 24px;
+        background: url(../images/icons/phone.png);
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+
+.btn
+{
+    font-size: 19px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Akrobat";
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.btn.orange
+{
+    border: none;
+    background: #DA5614;
+    color: #fff;
+    box-shadow: 7px 7px 5px rgba(218, 86, 20, 0.7);
+    transition: 0.3s;
+}
+
+.btn.orange:hover
+{
+    transform: scale(1.05)
+}
+
+.btn.border
+{
+    border: 3px solid #DA5614;
 }
 
 
