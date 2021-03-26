@@ -643,4 +643,42 @@ h1.title
     font-weight: 600;
 }
 
+h1.title.white
+{
+    color: #fff;
+}
+
+h2.subtitle
+{
+    font-size: 22px;
+    font-weight: 400;
+    text-align: center;
+}
+
+h2.subtitle.white
+{
+    color: #fff;
+}
+
+section.callback
+{
+    padding: 60px 0;
+    background: url(../images/bg/callback.jpg);
+    background-size: cover;
+    background-position: center;
+
+    .title
+    {
+        width: 60%;
+        font-size: 34px;
+        margin: auto;
+        text-transform: none;
+    }
+
+    .container
+    {
+        text-align: center;
+    }
+}
+
 @import 'responce';
