@@ -69,11 +69,11 @@ button, a
             flex-direction: column;
             background-color: #fff;
             padding: 10px 0;
-            border-radius: 10px;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
             opacity: 0;
             pointer-events: none;
             transition: 0.3s;
+            z-index: 10;
 
             span
             {
@@ -129,6 +129,90 @@ button, a
         bottom: 0;
         margin-top: auto;
         margin-bottom: auto;
+    }
+
+    .menu__wrapper
+    {
+        background-color: #20242b;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 19px;
+        font-weight: 600;
+
+        .menu
+        {
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+
+            li
+            {
+                position: relative;
+                padding: 10px;
+            }
+
+            li:hover .submenu
+            {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .submenu
+            {
+                list-style: none;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 100%;
+                width: 100%;
+                min-width: 250px;
+                padding: 15px 0;
+                background-color: #20242b;
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+                transition: 0.3s;
+                opacity: 0;
+                pointer-events: none;
+
+                li
+                {
+                    padding: 0;
+                    transition: 0.3s;
+
+                    a
+                    {
+                        width: 100%;
+                        display: flex;
+                        padding: 10px;
+                    }
+                }
+
+                li:hover
+                {
+                    background-color: #191c22;
+                }
+            }
+
+            .dropdown
+            {
+                padding-right: 15px;
+            }
+
+            .dropdown:after
+            {
+                content: '';
+                position: absolute;
+                width: 7px;
+                height: 6px;
+                background: url(../images/icons/select_arrow_white.png);
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+            }
+        }
     }
 }
 
