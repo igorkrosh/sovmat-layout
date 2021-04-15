@@ -248,5 +248,27 @@ html(lang="ru")
                     .owl__nav
                         .nav
                         .dots
+        footer
+            .container
+                .row
+                    .logo
+                        img(src="assets/images/logo.png", alt="")
+                    .col
+                        .contact__phone
+                            a(href="#") 
+                                +ContactPhone()
+                        button.btn.orange расчитать стоимость
+                        a(href="").btn.border прайс-лист для юр. лиц
+                .row
+                    .links__wrapper
+                        a(href="") Вакансии
+                        a(href="") Политика конфиденциальности
+                        a(href="") Пользовательское соглашение   
+                    .copyright
+                        |Copyrigth 2021 - все права защищены. Копирование информации без укзаания источника преследуется законом
+                    .salut
+                        |Разработка сайта - 
+                        a(href="https://salut-promo.ru/") Salut Promo
+                    
 
         include pug/scripts.pug

@@ -109,28 +109,6 @@ button, a
         margin-bottom: auto;
     }
 
-    .contact__phone
-    {
-        font-size: 19px;
-        font-weight: 600;
-        padding-left: 20px;
-        position: relative;
-    }
-
-    .contact__phone:after
-    {
-        content: '';
-        position: absolute;
-        width: 13px;
-        height: 24px;
-        background: url(../images/icons/phone.png);
-        left: 0;
-        top: 0;
-        bottom: 0;
-        margin-top: auto;
-        margin-bottom: auto;
-    }
-
     .menu__wrapper
     {
         background-color: #20242b;
@@ -215,6 +193,28 @@ button, a
             }
         }
     }
+}
+
+.contact__phone
+{
+    font-size: 19px;
+    font-weight: 600;
+    padding-left: 20px;
+    position: relative;
+}
+
+.contact__phone:after
+{
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 24px;
+    background: url(../images/icons/phone.png);
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .btn
@@ -951,6 +951,61 @@ section.reviews
             {
                 pointer-events: all;
             }
+        }
+    }
+}
+
+footer
+{
+    background: #f2f2f1;
+    padding: 40px 0;
+
+    .row
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .col
+        {
+            display: flex;
+            align-items: center;
+            width: 55%;
+            justify-content: space-between;
+        }
+    }
+
+    .row:nth-child(2)
+    {
+        margin-top: 30px;
+    }
+
+    .links__wrapper
+    {
+        display: flex;
+        flex-direction: column;
+        
+        a
+        {
+            font-weight: 500
+        }
+    }
+
+    .copyright
+    {
+        width: 400px;
+        text-align: center;
+        font-weight: 500
+    }
+
+    .salut
+    {
+        font-weight: 700;
+
+        a 
+        {
+            color: #DA5614;
         }
     }
 }
