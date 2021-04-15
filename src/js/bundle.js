@@ -1,5 +1,8 @@
 global.$ = global.jQuery = require('jquery');
 require('owl.carousel');
+require('jquery-validation');
+require('jquery-validation/dist/localization/messages_ru');
+require('jquery-mask-plugin');
 
 $(document).ready(Core);
 
