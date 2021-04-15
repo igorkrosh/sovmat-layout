@@ -41,9 +41,21 @@ html(lang="ru")
                         +ContactPhone()
                 button.btn.orange расчитать стоимость
                 a(href="").btn.border прайс-лист для юр. лиц
+                button.btn__menu
+                    span
             .menu__wrapper
                 .container
+                    .form__city(value="Истра")
+                        span.text Ваш город:
+                        span.city Истра
+                        .select
+                            span Истра
+                            span Нфыварколыв
+                            span Истра3
                     +Menu()
+                    button.btn.orange расчитать стоимость
+                    a(href="").btn.border прайс-лист для юр. лиц
+                    button.close
         section.main
             .container
                 .sidebar
@@ -56,16 +68,17 @@ html(lang="ru")
                         +Product('product6', 'Грунт плодородный')
                         +Product('product7', 'Гравий')
                         +Product('product8', 'Глина')
-                    .services
-                        a(href="#") Вывоз снега в Москве
-                        a(href="#") Вывоз мусора в Москве
-                        a(href="#") Рытье котлованов в Москве 
-                    .video
-                        img(src="assets/images/video.jpg", alt="")
-                        .text
-                            |Обращение директора компании «Совмат»
-                        button.btn_play
-                            img(src="assets/images/icons/play.png", alt="")
+                    .wrapper
+                        .services
+                            a(href="#") Вывоз снега в Москве
+                            a(href="#") Вывоз мусора в Москве
+                            a(href="#") Рытье котлованов в Москве 
+                        .video
+                            img(src="assets/images/video.jpg", alt="")
+                            .text
+                                |Обращение директора компании «Совмат»
+                            button.btn_play
+                                img(src="assets/images/icons/play.png", alt="")
                 .container
                     .slider__wrapper
                         .slider.owl-carousel

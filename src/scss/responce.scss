@@ -4,6 +4,34 @@
     {
         max-width: 1024px;
     }
+
+    section.main .slider .slider__item .wrapper
+    {
+        width: 60%;
+        padding: 30px;
+    }
+
+    .navbar .logo
+    {
+        width: 160px;
+        height: 70px;
+        background: url(../images/logo_sm.png);
+
+        img
+        {
+            display: none;
+        }
+    }
+
+    section.main .our__pluses .plus .hover
+    {
+        padding: 15px;
+    }
+
+    footer .row .col
+    {
+        width: 65%;
+    }
 }
 
 @media(max-width: 1024px)
@@ -11,6 +39,12 @@
     .container
     {
         max-width: 992px;
+    }
+
+    section.main .our__products .wrapper .product
+    {
+        width: 45%;
+        margin: 10px;
     }
 }
 
@@ -20,6 +54,170 @@
     {
         max-width: 768px;
     }
+
+    .btn__menu
+    {
+        display: block;
+    }
+
+    .navbar
+    {
+        .menu__wrapper.active
+        {
+            left: 0;
+        }
+        .menu__wrapper
+        {
+            position: fixed;
+            left: -100%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            background: rgba(32, 36, 43, 0.95);
+            display: flex;
+            align-items: center;
+            transition: 0.5s;
+
+            .btn
+            {
+                display: block;
+                margin-bottom: 15px;
+            }
+
+            .close
+            {
+                display: block;
+                width: 35px;
+                height: 35px;
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                border: none;
+                background: none;
+            }
+
+            .close:after, .close:before
+            {
+                content: '';
+                position: absolute;
+                width: 3px;
+                height: 100%;
+                background: #fff;
+                left: 50%;
+                top: 50%;
+            }
+
+            .close:after
+            {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            .close:before
+            {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+
+            .container
+            {
+                display: flex;
+                flex-direction: column;
+
+                .menu
+                {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+
+        .btn
+        {
+            display: none;
+        }
+    }
+
+    section.main .container:first-of-type
+    {
+        flex-direction: column-reverse;
+    }
+
+    section.main .container:first-of-type .container
+    {
+        width: 100%;
+    }
+
+    section.main .sidebar
+    {
+        width: 100%;
+
+        .wrapper
+        {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    section.main .sidebar .products__list
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    section.main .sidebar .services
+    {
+        width: 45%;
+    }
+
+    section.main .sidebar .video
+    {
+        width: 45%;
+    }
+
+    section.callback .title
+    {
+        width: 80%;
+    }
+
+    section.form__calculator .text__wrapper
+    {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    section.form__calculator form.calculator
+    {
+        margin: auto;
+    }
+
+    section.order__section .steps__wrapper .step
+    {
+        width: 45%;
+        margin: 10px;
+    }
+
+    footer .row .col
+    {
+        width: 100%;
+    }
+
+    footer .copyright
+    {
+        width: 280px;
+    }
+
+    footer .logo
+    {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 25px;
+    }
 }
 
 @media(max-width: 768px)
@@ -28,12 +226,255 @@
     {
         max-width: 576px;
     }
+
+    section.main .slider .slider__item .wrapper
+    {
+        width: 65%;
+    }
+
+    section.main .slider .slider__item .wrapper .item__title
+    {
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    section.main .slider .slider__item .btn.big
+    {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+
+    section.main .our__pluses
+    {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    section.main .our__pluses .plus
+    {
+        width: 50%;
+    }
+
+    section.callback .title
+    {
+        width: 100%;
+    }
+
+    footer .row .col
+    {
+        flex-direction: column;
+
+        .btn.orange
+        {
+            margin: 25px;
+        }
+    }
+
+    footer .row:nth-child(2)
+    {
+        flex-direction: column;
+
+        .copyright
+        {
+            margin: 25px;
+        }
+    }
 }
 
 @media(max-width: 576px)
 {
     .container
     {
-        max-width: 320px;
+        max-width: 100%;
+    }
+
+    .navbar
+    {
+        height: 50px;
+        display: flex;
+        align-items: center;
+
+        .form__city
+        {
+            display: none;
+        }
+
+        .menu__wrapper 
+        {
+            .form__city
+            {
+                display: block;
+                margin-bottom: 20px;
+
+                .select span
+                {
+                    color: #000;
+                }
+            }
+        }
+
+        .logo
+        {
+            width: 96px;
+            height: 42px;
+            background-size: cover;
+        }
+
+        .contact__phone
+        {
+            font-size: 16px;
+        }
+    }
+
+    section.main .slider__wrapper .owl__nav
+    {
+        position: relative;
+        padding: 30px 50px;
+
+        .nav
+        {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            display: flex;
+            justify-content: space-between;
+
+            button
+            {
+                pointer-events: all;
+                margin: 0;
+            }
+        }
+
+        .dots
+        {
+            margin: 0;
+        }
+    }
+
+    section.main .slider__wrapper
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    section.main .slider .slider__item .wrapper
+    {
+        width: 100%;
+        padding: 15px;
+    }
+
+    section.main .slider .slider__item .wrapper .item__title
+    {
+        font-size: 18px;
+        line-height: 36px;
+    }
+
+    section.main .slider .slider__item .btn.big
+    {
+        font-size: 16px;
+    }
+
+    section.main .slider .slider__item
+    {
+        height: 200px;
+    }
+
+    section.main .slider .slider__item img
+    {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    section.main 
+    {
+        .dots button
+        {
+            background: #000;
+        }
+
+        .dots button.active
+        {
+            background: #DA5614;
+        }        
+    }
+
+    section.main .our__pluses .plus
+    {
+        width: 100%;
+    }
+
+    section.main .our__products .wrapper .product
+    {
+        width: 100%;
+    }
+
+    section.main .sidebar .products__list
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    section.main .sidebar .products__list a
+    {
+        width: 100%;
+    }
+
+    section.main .sidebar .wrapper
+    {
+        flex-direction: column;
+    }
+
+    section.main .sidebar .services, section.main .sidebar .video
+    {
+        width: 100%;
+    }
+
+    section.main .sidebar .video
+    {
+        margin-bottom: 25px;
+    }
+
+    section.form__calculator form.calculator .form__row
+    {
+        flex-direction: column;
+    }
+
+    section.form__calculator form.calculator .form__row .input__group
+    {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    section.form__calculator form.calculator .btn.big
+    {
+        font-size: 16px;
+    }
+
+    section.order__section .steps__wrapper .step
+    {
+        width: 100%;
+    }
+
+    footer .logo img
+    {
+        height: 70px;
+    }
+
+    footer .row:nth-child(2) .copyright
+    {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    section.main .container:first-of-type .container
+    {
+        padding: 0 15px;
     }
 }

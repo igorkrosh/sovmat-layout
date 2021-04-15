@@ -6,6 +6,7 @@ function Core()
     InitOwl();
     SetFormCalculator();
     InitValidator();
+    SetMobileMenu();
 }
 
 function SetFormCity()
@@ -34,6 +35,17 @@ function InitOwl()
         dots: true,
         dotsContainer: $('section.reviews .owl__nav .dots'),
         loop: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            576: {
+                items: 2,
+            },
+            1024: {
+                items: 4,
+            }
+        }
     })
 }
 
@@ -113,4 +125,15 @@ function SubmitFormModal(form)
     {
         console.log('non valid')
     }
+}
+
+function SetMobileMenu()
+{
+    $('.navbar .btn__menu').on('click', function() {
+        $('.menu__wrapper').addClass('active');
+    })
+
+    $('.navbar .close').on('click', function(e) {
+        $('.menu__wrapper').removeClass('active');
+    })
 }

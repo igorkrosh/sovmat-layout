@@ -37,6 +37,24 @@ button, a
 {
     background-color: #f2f2f1;
 
+    .menu__wrapper
+    {
+        .btn
+        {
+            display: none;
+        }
+
+        .close
+        {
+            display: none;
+        }
+
+        .form__city
+        {
+            display:none;
+        }
+    }
+
     .container
     {
         display: flex;
