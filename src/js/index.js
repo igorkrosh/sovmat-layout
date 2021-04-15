@@ -26,6 +26,15 @@ function InitOwl()
         dots: true,
         dotsContainer: $('section.main .owl__nav .dots')
     });
+
+    $('section.reviews .reviews__slider').owlCarousel({
+        items: 4,
+        nav: true,
+        navContainer: $('section.reviews .owl__nav .nav'),
+        dots: true,
+        dotsContainer: $('section.reviews .owl__nav .dots'),
+        loop: true,
+    })
 }
 
 function SetFormCalculator()
@@ -96,7 +105,6 @@ function InitValidator()
 
 function SubmitFormModal(form)
 {
-
     if ($(form).valid())
     {
         console.log('valid')
