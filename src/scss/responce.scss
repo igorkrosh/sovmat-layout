@@ -32,6 +32,11 @@
     {
         width: 65%;
     }
+
+    .our__products .wrapper .owl-carousel .product
+    {
+        width: 220px;
+    }
 }
 
 @media(max-width: 1024px)
@@ -218,6 +223,11 @@
         margin-right: auto;
         margin-bottom: 25px;
     }
+
+    .product__desc
+    {
+        margin-bottom: 60px;
+    }
 }
 
 @media(max-width: 768px)
@@ -278,6 +288,21 @@
         {
             margin: 25px;
         }
+    }
+
+    .banner__wrapper
+    {
+        flex-direction: column;
+    }
+
+    .banner__wrapper .text__wrapper h1, .banner__wrapper .text__wrapper h2
+    {
+        display: inline-block;
+    }
+
+    section.faq .question
+    {
+        width: 100%;
     }
 }
 
@@ -476,5 +501,20 @@
     section.main .container:first-of-type .container
     {
         padding: 0 15px;
+    }
+
+    form.calculator
+    {
+        width: 100%;
+    }
+
+    .banner__wrapper
+    {
+        padding: 0;
+    }
+
+    .banner__wrapper .text__wrapper
+    {
+        padding: 15px;
     }
 }

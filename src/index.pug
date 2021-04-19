@@ -1,21 +1,5 @@
 include pug/mixins.pug
 
-mixin Product(img, title)
-    a(href="#")
-        - let imgPath = "assets/images/icons/" + img + ".png"
-        .icon
-            img(src=imgPath, alt="")
-        =title
-
-mixin ProductCard(img, title)
-    .product
-        - let imgPath = "assets/images/products/" + img + ".jpg"
-        img(src=imgPath, alt="")
-        .text__wrapper
-            span.item__title=title
-            span.price от 490 руб.\м3
-            button.btn.orange.simple Подробнее
-
 doctype html
 html(lang="ru")
     head
@@ -25,60 +9,10 @@ html(lang="ru")
         title Document
         include pug/head.pug
     body
-        header.navbar 
-            .container
-                .logo
-                    img(src="assets/images/logo.png", alt="")
-                .form__city(value="Истра")
-                    span.text Ваш город:
-                    span.city Истра
-                    .select
-                        span Истра
-                        span Нфыварколыв
-                        span Истра3
-                .contact__phone
-                    a(href="#") 
-                        +ContactPhone()
-                button.btn.orange расчитать стоимость
-                a(href="").btn.border прайс-лист для юр. лиц
-                button.btn__menu
-                    span
-            .menu__wrapper
-                .container
-                    .form__city(value="Истра")
-                        span.text Ваш город:
-                        span.city Истра
-                        .select
-                            span Истра
-                            span Нфыварколыв
-                            span Истра3
-                    +Menu()
-                    button.btn.orange расчитать стоимость
-                    a(href="").btn.border прайс-лист для юр. лиц
-                    button.close
+        +Navbar()
         section.main
             .container
-                .sidebar
-                    .products__list
-                        +Product('product1', 'Речной песок')
-                        +Product('product2', 'Мытый песок')
-                        +Product('product3', 'Песчано гравийная смесь (ПГС)')
-                        +Product('product4', 'Щебень')
-                        +Product('product5', 'Чернозем')
-                        +Product('product6', 'Грунт плодородный')
-                        +Product('product7', 'Гравий')
-                        +Product('product8', 'Глина')
-                    .wrapper
-                        .services
-                            a(href="#") Вывоз снега в Москве
-                            a(href="#") Вывоз мусора в Москве
-                            a(href="#") Рытье котлованов в Москве 
-                        .video
-                            img(src="assets/images/video.jpg", alt="")
-                            .text
-                                |Обращение директора компании «Совмат»
-                            button.btn_play
-                                img(src="assets/images/icons/play.png", alt="")
+                +Sidebar()
                 .container
                     .slider__wrapper
                         .slider.owl-carousel
@@ -103,31 +37,7 @@ html(lang="ru")
                         .owl__nav
                             .nav
                             .dots
-                    .our__pluses
-                        .plus
-                            .text
-                                |Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, culpa.
-                            .hover
-                                img(src="assets/images/icons/plus1.png", alt="")
-                                span Привезем в день заказа
-                        .plus
-                            .text
-                                |Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, culpa.
-                            .hover
-                                img(src="assets/images/icons/plus2.png", alt="")
-                                span Доставка от 3 м3
-                        .plus
-                            .text
-                                |Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, culpa.
-                            .hover
-                                img(src="assets/images/icons/plus3.png", alt="")
-                                span Приятные цены
-                        .plus
-                            .text
-                                |Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, culpa.
-                            .hover
-                                img(src="assets/images/icons/plus4.png", alt="")
-                                span Материал <br> с производства
+                    +OurPluses()
                     .our__products
                         h1.title Выберите сопутствующие материалы для строительства:
                         .wrapper
@@ -140,148 +50,10 @@ html(lang="ru")
                             +ProductCard('7', 'Гравий')
                             +ProductCard('8', 'Глина')
                             +ProductCard('9', 'Щебень')
-        section.callback
-            .container
-                h1.title.white У Вас появились вопросы к качеству продукции или проблемы с заказом?
-                h2.subtitle.white Напишите нам. Мы примем меры!
-                button.btn.orange.big Обратная связь
-        section.form__calculator
-            .container
-                .text__wrapper
-                    h1 Компания Совмат работает для вас!
-                    p Компания «СОВМАТ» существует с 2016 года.
-                    p «СОВМАТ» - состоит из профессионально подготовленной команды что подкреплено полученными благодарностями от клиентов. Сертификаты качества, лицензии и свидетельства необходимые для проведения демонтажных работ, являются крепким фундаментом нашей организации.
-                    p Мы молодая компания и выполняем свою работу с современным подходом. Отношение к поставленным задачам является главной мотивацией для нас. Качество выполненной работы является нашим преимуществом.
-                    a(href="").btn.border Подробнее о компании
-                form.calculator
-                    h1 Рассчитайте стоимость доставки
-                    .form__row
-                        .input__group
-                            label Выберите материал
-                            select(name="material")
-                                option(value="Чернозем" tab-id="1") Чернозем
-                                option(value="Чернозем2" tab-id="2") Чернозем2
-                                option(value="Чернозем3" tab-id="3") Чернозем3
-                                option(value="Чернозем4" tab-id="4") Чернозем4
-                        .input__group
-                            label Объем (м3)
-                            .count
-                                button.minus -
-                                input(type="number" name="count" value="0")
-                                button.plus +
-                    .description
-                        .tab__wrapper
-                            .tab.active(tab="1")
-                                b Подойдёт для:
-                                p - растений в открытом грунте
-                                p - растений в теплице
-                                p - улучшения характеристик почвы
-                            .tab(tab="2")
-                                b Подойдёт для:
-                                p - растений в открытом грунте
-                                p - растений в теплице
-                                p - улучшения характеристик почвы
-                                p - растений в открытом грунте
-                                p - растений в теплице
-                                p - улучшения характеристик почвы
-                            .tab(tab="3")
-                                b Подойдёт для:
-                                p - растений в открытом грунте
-                                p - растений в теплице
-                                p - улучшения характеристик почвы
-                            .tab(tab="4")
-                                b Подойдёт для:
-                                p - растений в открытом грунте
-                    .contacts_wrapper
-                        .input__group
-                            label Выберите адрес доставки 
-                            input(type="text" name="address")
-                        .input__group
-                            label Ваш телефон для связи
-                            input(type="text" name="phone")
-                    .btn__wrapper
-                        button.btn.orange.big Рассчитать стоимость
-        section.order__section
-            .container
-                h1.title Порядок оформления заказа
-                .steps__wrapper
-                    .step
-                        img(src="assets/images/steps/1.png", alt="")
-                        h2.step__title Оставьте заявку удобным способом
-                        .desc
-                            p Оформите заявку по телефону или заполните данные о материале в удобной форме заказа. Также Вы можете прислать запрос на электронную почту.
-                            button.btn.orange Оставить заявку
-                    .step
-                        img(src="assets/images/steps/2.png", alt="")
-                        h2.step__title Получите персональную стоимость
-                        .desc
-                            p Менеджер получает расчет оптимального маршрута и рассчитывает стоимость доставки материала исходя из данных системы.
-                            p Система логистики разработана и производит расчеты под чутким контролем сотрудников соответствующего отдела транспорта и логистики.
-                    .step
-                        img(src="assets/images/steps/3.png", alt="")
-                        h2.step__title Подтвердите заказ
-                        .desc
-                            p Вы подтверждаете заказ, после чего персональный менеджер подтверждает заказ в системе и Ваши данные получает водитель.
-                            p Водитель свяжется с Вами в день заказа, перед загрузкой машины. Вам необходимо подтвердить то, что Вы его ждете.
-                    .step
-                        img(src="assets/images/steps/4.png", alt="")
-                        h2.step__title Выгрузка и оплата материала
-                        .desc
-                            p После подтверждения водитель доставляет Вам материал, где Вы проверяете его перед выгрузкой.
-                            p осле проверки водитель выгружает товар и Вы рассчитываетесь за материал.
-        section.reviews
-            .container 
-                h1.title.white Отзывы наших клиентов
-                .reviews__slider.owl-carousel
-                    .review__item
-                        h2.review__title Отзыв Марины о глине
-                        p Укладываем тротуарную плитку на участке. Заказали глину, цена устроила. Глину привезли чистую! Спасибо.
-                        h2.review__footer Краснодар 10.08.2019 г.
-                    .review__item
-                        h2.review__title Отзыв на песок и щебень от Филиппа
-                        p Заказал у этой организации 8 кубов щебня и 4 песка, для строительства дома. Привезли нужный объем быстро и без обмана, сгрузили и уехали. Качество продукции высокое, цены оправданы.
-                        h2.review__footer Истра 03.06.2020 г.
-                    .review__item
-                        h2.review__title Отзыв от Светланы по вывозу мусора
-                        p Вывозили строительный мусор с территории ТЦ «Рио». Было вывезено 80 кубов мусора, за два часа. Огромное спасибо.
-                        h2.review__footer Ярославль 13.10.2019 г.
-                    .review__item
-                        h2.review__title Песок — отзыв от Виктора
-                        p На постройку фундамента заказали 126 кубов песка. Материал отличный, благодарим за качественную работу!
-                        h2.review__footer Красногорск 10.09.2019 г.
-                    .review__item
-                        h2.review__title Отзыв от Светланы по вывозу мусора
-                        p Вывозили строительный мусор с территории ТЦ «Рио». Было вывезено 80 кубов мусора, за два часа. Огромное спасибо.
-                        h2.review__footer Ярославль 13.10.2019 г.
-                    .review__item
-                        h2.review__title Песок — отзыв от Виктора
-                        p На постройку фундамента заказали 126 кубов песка. Материал отличный, благодарим за качественную работу!
-                        h2.review__footer Красногорск 10.09.2019 г.
-                .navs__wrapper
-                    .owl__nav
-                        .nav
-                        .dots
-        footer
-            .container
-                .row
-                    .logo
-                        img(src="assets/images/logo.png", alt="")
-                    .col
-                        .contact__phone
-                            a(href="#") 
-                                +ContactPhone()
-                        button.btn.orange расчитать стоимость
-                        a(href="").btn.border прайс-лист для юр. лиц
-                .row
-                    .links__wrapper
-                        a(href="") Вакансии
-                        a(href="") Политика конфиденциальности
-                        a(href="") Пользовательское соглашение   
-                    .copyright
-                        |Copyrigth 2021 - все права защищены. Копирование информации без укзаания источника преследуется законом
-                    .salut
-                        |Разработка сайта - 
-                        a(href="https://salut-promo.ru/") Salut Promo
-                    
+        +SectionCallback()
+        +SectionCalculator()
+        +SectionOrder()
+        +Reviews()
+        +Footer()               
 
         include pug/scripts.pug

@@ -7,6 +7,7 @@ function Core()
     SetFormCalculator();
     InitValidator();
     SetMobileMenu();
+    SetQuestion();
 }
 
 function SetFormCity()
@@ -44,6 +45,29 @@ function InitOwl()
             },
             1024: {
                 items: 4,
+            }
+        }
+    })
+
+    $('section.our__products .owl-carousel').owlCarousel({
+        items: 4,
+        nav: true,
+        navContainer: $('section.our__products .owl__nav .nav'),
+        dots: true,
+        dotsContainer: $('section.our__products .owl__nav .dots'),
+        loop: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            576: {
+                items: 2
+            },
+            768: {
+                items: 3
+            },
+            1024: {
+                items: 4
             }
         }
     })
@@ -135,5 +159,23 @@ function SetMobileMenu()
 
     $('.navbar .close').on('click', function(e) {
         $('.menu__wrapper').removeClass('active');
+    })
+}
+
+function SetQuestion()
+{
+    $('.faq .question').on('click', function() {
+        if ($(this).hasClass('active'))
+        {
+            $(this).removeClass('active');
+            $(this).find('.content').css('max-height', `0px`);
+        }
+        else
+        {
+            $(this).addClass('active');
+            let height = $(this).find('.content span').outerHeight();
+            $(this).find('.content').css('max-height', `${height}px`);
+        }
+        
     })
 }
