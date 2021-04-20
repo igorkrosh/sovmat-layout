@@ -4,6 +4,9 @@ require('jquery-validation');
 require('jquery-validation/dist/localization/messages_ru');
 require('jquery-mask-plugin');
 
+global.SimpleLightbox = require('simple-lightbox');
+global.SimpleLightbox.registerAsJqueryPlugin($);
+
 $(document).ready(Core);
 
 function Core()
@@ -78,7 +81,7 @@ function ShowModal(modalId)
     $(modalId + ' .modal__dialog').off('animationend');
     $(modalId).addClass('active');
     $('body').addClass('lock');
-    $(modalId + ' .modal__dialog').addClass('fadeInDownBig')
+    //$(modalId + ' .modal__dialog').addClass('fadeInDownBig')
     
     $('body').append('<div class="modal__backdrop"></div>');
     setTimeout(function() {
@@ -88,11 +91,13 @@ function ShowModal(modalId)
 
 function HideModal(modalId)
 {
-    $(modalId + ' .modal__dialog').removeClass('fadeInDownBig');
-    $(modalId + ' .modal__dialog').addClass('fadeOutDownBig');
+    //$(modalId + ' .modal__dialog').removeClass('fadeInDownBig');
+    //$(modalId + ' .modal__dialog').addClass('fadeOutDownBig');
     $('.modal__backdrop').removeClass('active');
     $('body').removeClass('lock');
-    $(modalId + ' .modal__dialog').on('animationend', function() {
+    $(modalId).removeClass('active');
+    $('.modal__backdrop').remove();
+    /*$(modalId + ' .modal__dialog').on('animationend', function() {
         if (!$(modalId).hasClass('active'))
         {
             return;
@@ -101,4 +106,5 @@ function HideModal(modalId)
         $(modalId + ' .modal__dialog').removeClass('fadeOutDownBig');
         $('.modal__backdrop').remove();
     });
+    */
 }

@@ -21,7 +21,7 @@ html(lang="ru")
                                 .wrapper
                                     .item__title 
                                         span Доставка песка, щебня, грунта чернозёма, гравия, глины и других сыпучих материалов
-                                    button.btn.orange.big Расчитать стоимость
+                                    button.btn.orange.big(modal="modalForm") Расчитать стоимость
                             .slider__item
                                 img(src="assets/images/slider/1.jpg", alt="")
                                 .wrapper
@@ -54,6 +54,7 @@ html(lang="ru")
         +SectionCalculator()
         +SectionOrder()
         +Reviews()
-        +Footer()               
+        +Footer()    
+        +Modal('modalForm', 'ModalForm')
 
         include pug/scripts.pug

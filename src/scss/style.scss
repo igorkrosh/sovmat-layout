@@ -1213,5 +1213,15 @@ section.faq
     }
 }
 
+#modalForm .modal__content
+{
+    padding: 0;
+
+    form
+    {
+        width: 100%;
+    }
+}
+
 
 @import 'responce';

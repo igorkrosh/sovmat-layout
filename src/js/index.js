@@ -8,6 +8,7 @@ function Core()
     InitValidator();
     SetMobileMenu();
     SetQuestion();
+    SetSidedarVideo();
 }
 
 function SetFormCity()
@@ -178,4 +179,9 @@ function SetQuestion()
         }
         
     })
+}
+
+function SetSidedarVideo()
+{
+    $('.sidebar .btn_play').simpleLightbox();
 }
